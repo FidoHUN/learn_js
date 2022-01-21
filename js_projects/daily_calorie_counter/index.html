@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Calorie Counter</title>
+    <!-- import tailwind css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css"
+      integrity="sha512-+WF6UMXHki/uCy0vATJzyA9EmAcohIQuwpNz0qEO+5UeE5ibPejMRdFuARSrl1trs3skqie0rY/gNiolfaef5w=="
+      crossorigin="anonymous"
+    />
+    <!-- import font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="w-80 min-w-full">
+    <!-- navbar -->
+    <nav
+      class="bg-blue-500 text-white text-center h-24 sm:flex sm:justify-center sm:items-center sm:relative"
+    >
+      <h1 class="text-xl py-2">Daily Calorie Counter</h1>
+      <button
+        id="clear-btn"
+        class="bg-blue-200 text-white px-2 py-1 shadow-inner rounded focus:outline-none sm:absolute sm:right-5"
+      >
+        CLEAR ALL
+      </button>
+    </nav>
+    <!-- add food card -->
+    <div id="main-card" class="my-10 mx-4 shadow-lg">
+      <div id="secondary-card" class="p-4">
+        <h1 class="text-xl">Add Meal</h1>
+        <div id="input-fields" class="sm:flex sm:justify-around">
+          <div id="left-side" class="flex sm:w-1/2 sm:block">
+            <label class="pr-4">Meal</label>
+            <input
+              id="food-name-input"
+              type="text"
+              class="border-b-2 focus:outline-none flex-auto w-11/12 sm:block"
+            />
+          </div>
+          <div id="right-side" class="flex sm:w-1/2 sm:block">
+            <label class="pr-4">Calories</label>
+            <input
+              id="food-calorie-input"
+              type="number"
+              class="border-b-2 focus:outline-none flex-auto w-11/12 sm:block"
+            />
+          </div>
+        </div>
+        <div id="buttons" class="pt-4 flex justify-between">
+          <div id="buttons-left-side" class="block sm:flex">
+            <button
+              id="add-btn"
+              class="bg-blue-900 text-white rounded focus:outline-none px-2 py-1"
+            >
+              <i class="fa fa-plus"></i> ADD MEAL
+            </button>
+            <button
+              id="update-btn"
+              class="bg-yellow-500 text-white rounded focus:outline-none px-2 py-1 sm:mr-5"
+            >
+              <i class="fa fa-pencil-alt"></i> UPDATE MEAL
+            </button>
+            <button
+              id="delete-btn"
+              class="bg-red-600 text-white rounded focus:outline-none px-2 py-1 sm:ml-5 mt-2 sm:mt-0"
+            >
+              <i class="fa fa-trash-alt"></i> DELETE MEAL
+            </button>
+          </div>
+          <div id="buttons-right-side" class="flex justify-end">
+            <button
+              id="back-btn"
+              class="bg-gray-500 text-white rounded focus:outline-none px-2 py-1 justify-self-end"
+            >
+              <i class="fa fa-chevron-left"></i> BACK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-xl mx-8">Today:</div>
+    <!-- already added meals -->
+    <div id="table-container" class="flex justify-center">
+      <!-- <table class="w-10/12 sm:w-8/12"></table> -->
+    </div>
+    <!-- progress bar-->
+    <div id="progress-bar" class="mx-4 mt-10 mb-10">
+      <div id="bar" class="bg-blue-200">
+        <div
+          id="change-bar"
+          style="width: 0%"
+          id="percentage"
+          class="bg-blue-900 text-white"
+        >
+          &#xfeff;
+        </div>
+      </div>
+    </div>
+    <div id="current-calories" class="text-2xl text-center mb-10">
+      <h1 class="inline">Total Calories:</h1>
+      <span id="total-calories"></span><span>/3000</span>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
